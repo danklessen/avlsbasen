@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Avlsbasen</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+</head>
+
+<body>
+
+    <ons-splitter>
+        <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+            <ons-page>
+                <ons-list>
+                    <ons-list-item onclick="fn.load('sg_avlspartner.html')" tappable>
+                        Søg Avlspartner
+                    </ons-list-item>
+                    <ons-list-item onclick="fn.load('profil.html')" tappable>
+                        Profil
+                    </ons-list-item>
+                    <ons-list-item onclick="fn.load('opret_dyr.html')" tappable>
+                        Opret dyr
+                    </ons-list-item>
+                    <ons-list-item onclick="fn.load('indbakke.html')" tappable>
+                        Indbakke
+                    </ons-list-item>
+                    <ons-list-item onclick="fn.load('indstillinger.html')" tappable>
+                        Indstillinger
+                    </ons-list-item>
+                    <ons-list-item onclick="fn.load('omappen.html')" tappable>
+                        Om Appen
+                    </ons-list-item>
+                    <ons-list-item onclick="fn.load('logud.html')" tappable>
+                        Log ud
+                    </ons-list-item>
+                </ons-list>
+            </ons-page>
+        </ons-splitter-side>
+        <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+    </ons-splitter>
+
+
+
+    <!--søg avlspartner-->
+    <template id="sg_avlspartner.html">
+        <ons-page>
+            <ons-toolbar class="toolbar">
+                <div class="left">
+                    <ons-toolbar-button class="menubars" onclick="fn.open()">
+                        <i class="fas fa-bars"></i>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">
+                    <img src="img/avlsbasen-logo.png" height="40px" alt="logo">
+                </div>
+                <div class="toolbar__right">
+                    <span class="profilikon" onclick="fn.load('profil.html')"><i class="fas fa-user-circle fa-2x"></i></span>
+                </div>
+            </ons-toolbar>
+            <section class="white-background" id="scroll">
+            <div id="searchButtons">
+                <ons-button id="filterButton" onclick="showToast()">Filter</ons-button>
+                <i id="barSearch" class="fas fa-search fa-2x"></i>
+            </div>
+            <div id="gridAnimals"></div>
+            </section>
+        </ons-page>
+    </template>
+
+
+    <!--Profil-->
+    <template id="profil.html">
+        <ons-page>
+            <ons-toolbar class="toolbar">
+                <div class="left">
+                    <ons-toolbar-button class="menubars" onclick="fn.open()">
+                        <i class="fas fa-bars"></i>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">
+                    <img src="img/avlsbasen-logo.png" height="40px" alt="logo">
+                </div>
+                <div class="toolbar__right">
+                    <span class="profilikon" onclick="fn.load('profil.html')"><i class="fas fa-user-circle fa-2x"></i></span>
+                </div>
+            </ons-toolbar>
+
+
+ <div class="background-cover"></div>
+
+
+<section class="white-background">
+
+			<div>
+            <img class="profil-image" src="img/pernille.png" alt="persona profil billede">
+		 </div>
+
+            <h1 id="persona-name">Pernille Pedersen</h1>
+            <p class="persona-p">Hej jeg hedder Pernille og er 24 år gammel og har professionelt arvlet hunde og katte i over 3 år. <br> Har du spørgsmål så kontakt mig gennem tlf: 99 88 77 66 eller skriv en mail til pernille-dk@hotmail.com. </p>
+
+
+<div class="flex-container">
+
+    <div class="icons">
+
+                        <i id="icon-comment" class="fas fa-comment fa-3x"></i>
+
+        <p class="feedbacks">136</p>
+    </div>
+
+
+    <div class="icons">
+
+
+                        <i id="icon-heart" class="fas fa-heart fa-3x"></i>
+
+        <p class="feedbacks">250</p>
+    </div>
+
+
+
+    <div class="icons">
+
+
+                        <i id="icon-star" class="fas fa-star fa-3x"></i>
+
+        <p class="feedbacks">76</p>
+    </div>
+
+
+</div>
+
+<h2 id="oversigt">Oversigt</h2>
+<div class="flex-container">
+
+
+    <div class="posts">
+        <div onclick="fn.load('dyrprofil.html')" tappable>
+        <img class="opslag" src="img/dog.png" alt="billede af en hund">
+        <p class="description">Lucky</p>
+      </div>
+    </div>
+
+    <div class="posts">
+
+        <img onclick="fn.load('opret_dyr.html')" class="opslag" src="img/add-new-post.png" alt="add a new post">
+        <p class="description">Tilføj avlsdyr</p>
+
+    </div>
+
+</div>
+
+
+</section>
+
+</ons-page>
+</template>
+
+<!-- Opret dyr -->
+    <template id="opret_dyr.html">
+        <ons-page id="opret">
+            <ons-toolbar class="toolbar">
+                <div class="left">
+                    <ons-toolbar-button class="menubars" onclick="fn.open()">
+                        <i class="fas fa-bars"></i>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">
+                    <img src="img/avlsbasen-logo.png" height="40px" alt="logo">
+                </div>
+                <div class="toolbar__right">
+                    <span class="profilikon" onclick="fn.load('profil.html')"><i class="fas fa-user-circle fa-2x"></i></span>
+                </div>
+            </ons-toolbar>
+      <div class="grad-back">
+
+
+
+            <h2>Opret dit kæledyr</h2>
+          <h3>Vælg nedenfor</h3>
+
+          <div id="choose-wrap">
+
+
+            <div class="choose-pet" id="hund">
+                <img src="img/hund.png" alt="Vælg hund">
+                <p><b>Hund</b></p>
+            </div>
+
+
+
+              <div class="choose-pet" id="kat">
+                  <img src="img/kat.png" alt="Vælg kat">
+                  <p><b>Kat</b></p>
+              </div>
+
+
+
+                <div id="horse"  class="choose-pet">
+                    <img src="img/hest.png" alt="Vælg hest">
+                    <p><b>Hest</b></p>
+                </div>
+
+
+
+              </div>
+
+              <div id="option-oth"><p>Andre dyrearter?</p></div>
+
+              <form id="form" name="form">
+                <p>Opret med chipnummer</p>
+                <input class="sog" id="myTextBox" type="text" value="&nbsp;&nbsp;">
+                <div class="genderbox">
+                <div class="gender" tappable>
+                  <p>Hanhund</p>
+                </div>
+                <div class="gender">
+                  <p>Hunhund</p>
+                </div>
+                </div>
+
+                <div class="genderbox">
+                <select class="selector" id="race" style="display: block;">
+                  <option value="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Race</option>
+                <option class="select-item" value="Bulldog"> Bulldog </option>
+                <option class="select-item" value="Pomeranian"> Pomeranian </option>
+                <option class="select-item" value="Mops"> Mops </option>
+                <option class="select-item" value="Rottweiler"> Rottweiler </option>
+                <option class="select-item" value="Andet"> Andet </option>
+                </select>
+
+                <select class="selector" id="age" style="display: block;">
+                  <option value="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alder</option>
+                <option class="select-item" value="2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 år </option>
+                <option class="select-item" value="3"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 år </option>
+                <option class="select-item" value="4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 år </option>
+                <option class="select-item" value="5"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5 år </option>
+                <option class="select-item" value="6"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6 år </option>
+                <option class="select-item" value="7"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7 år </option>
+                <option class="select-item" value="8"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8 år </option>
+                </select>
+                </div>
+                <div id="bt-div">
+                <button id="next" onclick="fn.load('profil.html')">Opret dyr</button>
+
+                </div>
+                <p onclick="fn.load('profil.html')"> Opret senere <i class="fa fa-angle-right"></i></p>
+
+              </form>
+            </div>
+
+
+        </ons-page>
+    </template>
+<!--Indbakke -->
+    <template id="indbakke.html">
+        <ons-page>
+            <ons-toolbar class="toolbar">
+                <div class="left">
+                    <ons-toolbar-button class="menubars" onclick="fn.open()">
+                        <i class="fas fa-bars"></i>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">
+                    <img src="img/avlsbasen-logo.png" height="40px" alt="logo">
+                </div>
+                <div class="toolbar__right">
+                    <span class="profilikon" onclick="fn.load('profil.html')"><i class="fas fa-user-circle fa-2x"></i></span>
+                </div>
+            </ons-toolbar>
+
+            <h3 class="comingSoon">Coming Soon!</h3>
+
+        </ons-page>
+    </template>
+    
+<!-- indstillinger -->
+    <template id="indstillinger.html">
+        <ons-page>
+            <ons-toolbar class="toolbar">
+                <div class="left">
+                   <ons-toolbar-button class="menubars" onclick="fn.open()">
+                        <i class="fas fa-bars"></i>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">
+                    <img src="img/avlsbasen-logo.png" height="40px" alt="logo">
+                </div>
+                <div class="toolbar__right">
+                   <span class="profilikon" onclick="fn.load('profil.html')"><i class="fas fa-user-circle fa-2x"></i></span>
+                </div>
+            </ons-toolbar>
+            <h3 class="comingSoon">Coming Soon!</h3>
+        </ons-page>
+    </template>
+<!-- Om appen -->
+    <template id="omappen.html" class="page">
+        <ons-page>
+            <ons-toolbar class="toolbar">
+                <div class="left">
+                   <ons-toolbar-button class="menubars" onclick="fn.open()">
+                        <i class="fas fa-bars"></i>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">
+                    <img src="img/avlsbasen-logo.png" height="40px" alt="logo">
+                </div>
+                <div class="toolbar__right">
+                    <span class="profilikon" onclick="fn.load('profil.html')"><i class="fas fa-user-circle fa-2x"></i></span>
+                </div>
+            </ons-toolbar>
+            <h3 class="comingSoon">Coming Soon!</h3>
+        </ons-page>
+    </template>
+<!--Log out-->
+    <template id="logud.html" class="page">
+        <ons-page>
+        <section class="grad-back">
+         <img src="img/avlsbasen-logo.png" alt="logo" class="logofront">
+			<br><br>
+      <img src="img/hund.png" height="150px" text-align="center" alt="hund"><br><br><br>
+      
+      
+      
+<h4>Brugernavn</h4><form name="login">
+<input id="input" name="id" type="text">
+
+<h4>Adgangskode</h4><input id="input" name="pass" type="password">
+
+
+<input id="loginbutton" type="button" value="LOG IND"
+	   onClick="pasuser(this.form)"></form>
+
+
+
+
+</section>
+        </ons-page>
+    </template>
+
+    <!-- DYR PROFIL Lucky -->
+
+    <template id="dyrprofil.html" class="page">
+        <ons-page>
+            <ons-toolbar class="toolbar">
+                <div class="left">
+                    <ons-toolbar-button class="menubars" onclick="fn.open()">
+                        <i class="fas fa-bars"></i>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">
+                    <img src="img/avlsbasen-logo.png" height="40px" alt="logo">
+                </div>
+                <div class="toolbar__right">
+                    <span class="profilikon" onclick="fn.load('profil.html')"><i class="fas fa-user-circle fa-2x"></i></span>
+                </div>
+            </ons-toolbar>
+
+
+            <img class="background-cover" src="img/profil-cover.png" alt="profil cover image gradient">
+
+
+
+            <section class="white-background">
+
+
+
+<div>
+
+	<div onclick="fn.load('profil.html')" tappable>
+                       <img id="go-back" src="img/back.png" alt="go back button">
+                    </div>
+</div>
+
+
+
+
+
+<div>
+	<div onclick="btnalert3();">
+                        <img id="add-to-favorite" src="img/favorit.png" alt="add to favorite">
+                    </div>
+</div>
+
+
+
+
+
+<div>
+	<div onclick="fn.load('profil.html')" tappble>
+                        <button id="show-owner">Vis ejeren</button>
+                    </div>
+
+</div>
+
+
+
+
+
+
+<div>
+            <img id="dog-image" src="img/dog.png" alt="billede af en hund">
+ </div>
+
+                <h1 id="animals-headline">Lucky</h1>
+                <p class="persona-p">Den mest loyale hund i hele verden</p>
+
+
+
+                <h2 id="animal-info">Information</h2>
+
+
+                <p class="persona-p2">Lucky er 2 år gammel og er født i Tyskland, men opvokset i danske jord. Hun er ifølge dyrlægen meget rask og fri for sygdommen. <br> Er molly noget for dig? så kontakt mig gennem appen eller på tlf. 42 58 79 62  </p>
+
+
+                <div onclick="fn.load('profil.html')" tappable>
+                   <i id="icon-comment2" class="fas fa-comment fa-3x"></i>
+
+
+                    <h3 id="animals-kontakt2">Kontakt ejeren</h3>
+
+
+                </div>
+
+            </section>
+
+
+        </ons-page>
+    </template>
+
+
+
+	<!-- EJERS PROFIL -->
+    <template id="ejer-profil.html">
+        <ons-page>
+            <ons-toolbar class="toolbar">
+                <div class="left">
+                    <ons-toolbar-button class="menubars" onclick="fn.open()">
+                        <i class="fas fa-bars"></i>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">
+                    <img src="img/avlsbasen-logo.png" height="40px" alt="logo">
+                </div>
+                <div class="toolbar__right">
+                    <span class="profilikon" onclick="fn.load('profil.html')"><i class="fas fa-user-circle fa-2x"></i></span>
+                </div>
+            </ons-toolbar>
+
+
+ <div class="background-cover"></div>
+
+
+
+
+<section class="white-background">
+
+
+<div>
+
+	<div onclick="fn.load('ejersdyrprofil.html')" tappable>
+                       <img id="go-back2" src="img/back.png" alt="go back button">
+                    </div>
+</div>
+
+
+
+
+
+<div>
+	<div onclick="btnalert3();">
+                        <img id="add-to-favorite2" src="img/favorit.png" alt="add to favorite">
+                    </div>
+</div>
+
+
+			<div>
+            <img class="profil-image" src="img/ejer.png" alt="persona profil billede">
+		 </div>
+
+            <h1 id="persona-name2">Jimmy Klessen Hansen</h1>
+            <p class="persona-p">Jeg hedder Jimmy og er 32 år gammel og har professionelt arvlet hunde i over 3 år. <br> Har du spørgsmål så kontakt mig gennem tlf: 99 88 77 66 eller skriv en mail til jimmy-dk@hotmail.com. </p>
+
+
+<div class="flex-container">
+
+    <div class="icons">
+        <div onclick="btnalert1();">
+                        <i id="icon-comment3" class="fas fa-comment fa-3x"></i>
+                    </div>
+
+        <p class="feedbacks">36</p>
+    </div>
+
+
+    <div class="icons">
+
+        <div onclick="btnalert2();">
+                        <i id="icon-heart2" class="fas fa-heart fa-3x"></i>
+                    </div>
+        <p class="feedbacks">143</p>
+    </div>
+
+
+
+    <div class="icons">
+
+        <div onclick="btnalert3();">
+                        <i id="icon-star2" class="fas fa-star fa-3x"></i>
+                    </div>
+        <p class="feedbacks">27</p>
+    </div>
+
+
+</div>
+
+<h2 id="oversigt2">Oversigt</h2>
+<div class="flex-container">
+
+    <div onclick="fn.load('ejersdyrprofil.html')" tappable>
+        <img class="opslag" src="img/cairnterrier.jpeg" alt="billede af en hund">
+        <p class="description">Molly</p>
+    </div>
+
+
+
+</div>
+</section>
+
+</ons-page>
+</template>
+
+<!--DYr Profil for ejeren Molly-->
+<template id="ejersdyrprofil.html" class="page">
+        <ons-page>
+            <ons-toolbar class="toolbar">
+                <div class="left">
+                    <ons-toolbar-button class="menubars" onclick="fn.open()">
+                        <i class="fas fa-¡bars"></i>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">
+                    <img src="img/avlsbasen-logo.png" height="40px" alt="logo">
+                </div>
+                <div class="toolbar__right">
+                    <span class="profilikon" onclick="fn.load('profil.html')"><i class="fas fa-user-circle fa-2x"></i></span>
+                </div>
+            </ons-toolbar>
+
+
+            <img class="background-cover" src="img/profil-cover.png" alt="profil cover image gradient">
+
+
+
+            <section class="white-background">
+
+
+
+<div>
+
+	<div onclick="fn.load('sg_avlspartner.html')" tappable>
+                       <img id="go-back3" src="img/back.png" alt="go back button">
+                    </div>
+</div>
+
+
+
+
+
+
+<div > <div onclick="btnalert3();"> <img id="add-to-favorite3"
+src="img/favorit.png" alt="add to favorite"> </div> </div> <div> <div> <img
+id="add-to-favorite4" src="img/favorit.png" alt="add to favorite"> </div> </div>
+
+
+
+
+
+<div>
+	<div onclick="fn.load('ejer-profil.html')" tappble>
+                        <button id="show-owner2">Vis ejeren</button>
+                    </div>
+
+</div>
+
+
+
+
+
+
+<div>
+            <img id="dog-image2" src="img/cairnterrier.jpeg" alt="billede af en hund">
+ </div>
+
+                <h1 id="animals-headline2">Molly</h1>
+                <p class="persona-p">Den mest loyale hund i hele verden</p>
+
+
+
+                <h2 id="animal-info2">Information</h2>
+
+                <p class="persona-p2">Molly er 2 år gammel og er født i Tyskland, men opvokset i danske jord. Hun er ifølge dyrlægen meget rask og fri for sygdomme. <br> Er molly noget for dig? så kontakt mig gennem appen eller på tlf. 42 58 79 62  </p>
+
+                <div onclick="fn.load('ejer-profil.html')" tappable>
+                   <i id="icon-comment4" class="fas fa-comment fa-3x"></i>
+
+
+                    <h3 id="animals-kontakt">Kontakt ejeren</h3>
+
+
+                </div>
+
+            </section>
+
+
+        </ons-page>
+    </template>
+
+
+    <!-- main js file -->
+    <script src="js/main.js"></script>
+	<!-- Sweet alert 2-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+</body>
+
+</html>

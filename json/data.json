@@ -1,0 +1,64 @@
+[
+    {
+        "name": "Molly",
+        "age": "1 år",
+        "race": "Cairn Terrier",
+        "img": "cairnterrier.jpeg"
+    },
+    {
+        "name": "Max",
+        "age": "4 år",
+        "race": "Dalmatiner",
+        "img": "dalmatiner.jpg"
+    },
+    {
+        "name": "Buster",
+        "age": "8 år",
+        "race": "Engelsk bulldog",
+        "img": "english-bulldog.jpg"
+    },
+    {
+        "name": "Mille",
+        "age": "6 år",
+        "race": "King C. Spaniel",
+        "img": "kingcharlesspaniel.jpg"
+    },
+    {
+        "name": "Balder",
+        "age": "2 år",
+        "race": "Labrador",
+        "img": "labradorretriever.jpg"
+    },
+    {
+        "name": "Charlie",
+        "age": "6 år",
+        "race": "Mops",
+        "img": "mops.jpg"
+    },
+    {
+        "name": "Luna",
+        "age": "4 år",
+        "race": "Pomeranian",
+        "img": "pomeranian.jpg"
+    }, {
+        "name": "Milo",
+        "age": "10 år",
+        "race": "Rottweiler",
+        "img": "rottweiler.jpg"
+    }, {
+        "name": "Sofus",
+        "age": "7 år",
+        "race": "Shih Tzu",
+        "img": "shihtzu.jpg"
+    }, {
+        "name": "Buller",
+        "age": "5 år",
+        "race": "Siberian Husky",
+        "img": "siberianhusky.jpg"
+    }, {
+        "name": "Felix",
+        "age": "4 år",
+        "race": "Malteser",
+        "img": "malteser.jpg"
+    }
+    ]

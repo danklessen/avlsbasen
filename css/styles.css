@@ -1,0 +1,618 @@
+/*-----------global------------*/
+
+:root {
+    --main-color: rgb(186, 228, 213);
+    --button-color: rgb(86, 195, 199);
+}
+
+body {
+    background: linear-gradient(45deg, #59e29e 0%, #39afc0 50%, #78e3d0 100%);
+    font-family: 'Hero';
+    width: 100vw;
+}
+
+p {
+    color: white;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+}
+
+@font-face {
+    font-family: 'hero';
+    src: url('fonts/HeroLight-Regular.ttf') format('ttf'),
+        url('fonts/HeroLight-Regular.otf') format('otf');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'hero', sans-serif;
+}
+
+h4 {
+	font-size: 18px;
+	color: white;
+}
+
+section {
+    background-image: url(/img/pote.png);
+    height: 180vw;
+    width: 100%;
+    overflow: scroll;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    text-align: center;
+    position: fixed;
+}
+
+.grad-back {
+    background: linear-gradient(45deg, #59e29e 0%, #39afc0 50%, #78e3d0 100%);
+}
+
+.logofront {
+    height: 80px;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+#input {
+	text-align: center;
+	font-size: 16px;
+	box-sizing: border-box;
+	width: 300px;
+    height: 45px;
+	border-radius: 25px;
+	border: none;
+	padding: 10px;
+	margin-bottom: 15px;
+	
+	
+}
+
+#loginbutton {
+    box-sizing: border-box;
+    width: 300px;
+    height: 45px;
+    border: 3px solid white;
+    line-height: 40px;
+    border-radius: 25px;
+    margin: 5% 10% 5% 10%;
+	color:#58C4C8;
+	font-size: 18px;
+
+}
+
+
+a {
+    text-decoration: none;
+
+}
+
+
+#signupbutton {
+    text-align: center;
+    width: 300px;
+    height: 45px;
+    background-color: white;
+    color: #58C4C8;
+    border-radius: 25px;
+    line-height: 45px;
+    margin: 5% 10% 0% 10%;
+
+
+
+}
+
+#login {
+    background: #59e29e;
+    /* Old browsers */
+    background: -moz-linear-gradient(45deg, #59e29e 0%, #39afc0 50%, #78e3d0 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, #59e29e 0%, #39afc0 50%, #78e3d0 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #59e29e 0%, #39afc0 50%, #78e3d0 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#59e29e', endColorstr='#78e3d0', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+}
+
+
+
+/*-----------baggrund------------*/
+.page,
+.page__content,
+.page--material,
+.page--material__content {}
+
+
+/*-----------Menu icons------------*/
+
+.profilikon {
+    padding: 5px 10px 0px 0px;
+    color: white;
+    display: block
+}
+
+
+.menubars {
+    color: white;
+    font-size: 25px;
+    padding-top: 10px;
+    color: white !important;
+}
+
+/*-----------toolbar------------*/
+
+.toolbar {
+    background-color: rgb(255, 255, 255, 0.3) !important;
+
+}
+
+
+/*---------- menu bar slider -------------*/
+.center {
+    color: rgb(186, 228, 213);
+    text-decoration: underline;
+    text-align: center;
+    height: 70px;
+
+}
+
+.page__background {
+    width: 0%;
+
+}
+
+.page__content {}
+
+.list-header,
+.list-item--expandable,
+.list-item__center,
+.list-item__right {
+    background-size: 100% 10px;
+}
+
+/**---------opret dyr siden---------**/
+
+#opret h2 {
+    text-align: center;
+    color: #fff;
+    margin-top: 10%;
+}
+
+#opret h3 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 15%;
+}
+
+#opret {
+    color: white;
+}
+
+#pet-txt {
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#choose-wrap {
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+    margin-left: 15%;
+}
+
+.choose-pet {}
+
+
+.choose-pet img {
+    width: auto;
+    height: 90px;
+}
+
+
+.choose-pet p {
+    text-align: center;
+}
+
+#option-oth {
+    text-align: center;
+}
+
+#form {
+    text-align: center;
+}
+
+#form p {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.genderbox {
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 360px;
+    margin: auto;
+    margin-bottom: 5%;
+}
+
+.gender {
+    width: 160px;
+    height: 50px;
+    border: 3px white solid;
+    border-radius: 30px;
+    padding: 0;
+    display: inline-block;
+
+}
+
+.gender p {
+    font-size: 1.5em;
+    margin: 0;
+    margin-top: 10px
+}
+
+.sog {
+    display: block;
+    height: 50px;
+    width: 300px;
+    margin: auto;
+    border-radius: 30px;
+    border: none;
+    margin-bottom: 8%;
+    font-size: 1.5em;
+    background-color: white;
+}
+
+.selector {
+    background-color: transparent;
+    border: 3px white solid;
+    border-radius: 30px;
+    width: 160px;
+    height: 50px;
+    color: white;
+}
+
+option {
+    color: black;
+}
+
+#race,
+#age {
+    font-size: 1.5em;
+    margin: 0;
+    margin-top: 10px;
+}
+
+#bt-div {
+    margin: auto;
+    width: 160px;
+    margin-bottom: 5%;
+    margin-top: 15%;
+    color: white;
+}
+
+#bt-div p {
+    color: white;
+}
+
+#next {
+    width: 160px;
+    height: 50px;
+    font-size: 1.5em;
+    border-radius: 30px;
+    border: none;
+    color: rgb(86, 195, 199);
+    background-color: white;
+}
+
+#hund {
+    background-color: transparent !important;
+}
+
+
+
+
+/**---------søge avlspartner siden---------**/
+#sg_avlspartner.html {}
+
+#scroll {
+    overflow: scroll;
+}
+
+#scroll p {
+    color: rgb(86, 195, 199) !important;
+}
+
+#gridAnimals {
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: row;
+    margin-top: 15px;
+    justify-content: space-between;
+    margin-left: 25px;
+    margin-right: 25px;
+    height: 210%;
+}
+
+.imgContainer {
+    width: 170px;
+    height: 170px;
+    overflow: hidden;
+    border-radius: 5%;
+}
+
+.imgContainer img {
+    height: 110%;
+    transform: translate(-10%, -10%);
+}
+
+.textContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: rgb(86, 195, 199);
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+#gridAnimals h3 {
+    position: absolute;
+    margin-top: -50px;
+    margin-left: 15px;
+    background-color: rgb(255, 255, 255, 0.9);
+    padding: 8px;
+    border-radius: 10px;
+    color: rgb(86, 195, 199);
+    font-size: 16px;
+}
+
+/**-------search bar & filter knap-------**/
+
+#searchButtons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+
+#barSearch {
+    margin-right: 15px;
+    color: rgb(186, 228, 213);
+
+}
+
+#filterButton {
+    background-color: rgb(255, 255, 255, 0.9);
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+}
+
+#gridAnimals {}
+
+/* ------------ profil ----------- */
+.white-background {
+    background-color: white;
+
+}
+
+
+.background-cover {
+    display: block;
+
+    width: 100%;
+    height: 140px;
+    z-index: -99;
+
+}
+
+
+.profil-image {
+    display: block;
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    margin: -90px 0 0 130px;
+    border: 5px solid white;
+    border-radius: 100px;
+    z-index: 1;
+
+
+
+}
+
+#persona-name,
+#persona-name2 {
+    text-align: center;
+    font-size: 25px;
+    color: #58c4c8;
+    margin-top: 80px;
+
+}
+
+.persona-p {
+    color: dimgray;
+    text-align: center;
+    padding: 0px 30px;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 300;
+
+}
+
+
+.flex-container {
+    display: flex;
+
+
+}
+
+.icons {
+    margin-left: 75px;
+
+}
+
+#icon-comment,
+#icon-comment2,
+#icon-comment3,
+#icon-comment4,
+#icon-heart,
+#icon-heart2,
+#icon-star,
+#icon-star2 {
+    background: linear-gradient(45deg, #39afc0 0%, #59e29e 65%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.feedbacks {
+    color: #58c4c8;
+}
+
+#oversigt,
+#oversigt {
+    float: left;
+    font-size: 20px;
+    margin-left: 30px;
+    color: #58c4c8;
+}
+
+.posts {
+    display: block;
+    margin: 50px 90px 0 -96px;
+}
+
+.opslag {
+
+    width: 180px;
+    height: 150px;
+    margin: 0 12px;
+    border-radius: 20px;
+}
+
+.description {
+    margin: -1px 20px;
+    color: #58c4c8;
+    font-size: 14px;
+}
+
+/* animals profil */
+
+
+.icons2 {
+    display: block;
+    position: absolute;
+    padding: 30px;
+    z-index: 99;
+    margin-top: -50px;
+
+}
+
+#go-back,
+#go-back2,
+#go-back3 {
+    width: 40px;
+    display: block;
+    position: fixed;
+    margin: -120px 0 0 20px;
+    color: white;
+}
+
+#add-to-favorite,
+#add-to-favorite2,
+#add-to-favorite3,
+#add-to-favorite4 {
+    width: 40px;
+    display: block;
+    position: fixed;
+    margin: -130px 0 0 190px;
+    color: white;
+}
+
+#show-owner,
+#show-owner2 {
+    display: block;
+    position: fixed;
+    margin: -120px 0 0 320px;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    background-color: white;
+    font-size: 13px;
+}
+
+
+#dog-image,
+#dog-image2 {
+    display: block;
+    position: fixed;
+    margin: -70px 0 0 40px;
+    border-radius: 25px;
+    width: 80%;
+}
+
+#animals-headline,
+#animals-headline2 {
+    text-align: center;
+    margin: 190px 0 0 0;
+    font-size: 25px;
+    color: #58c4c8;
+}
+
+#animal-info,
+#animal-info2 {
+    float: left;
+    font-size: 20px;
+    margin-left: 30px;
+    color: #58c4c8;
+}
+
+.persona-p2 {
+    margin: 62px 0 0 -20px;
+    text-align: left;
+    padding: 0 50px;
+    line-height: 1.6;
+    color: dimgray;
+    font-size: 14px;
+    font-weight: 300;
+
+
+}
+
+#animals-kontakt,
+#animals-kontakt2 {
+    text-align: center;
+    font-size: 15px;
+    color: #58c4c8;
+}
+
+
+.comingSoon {
+    background-color: rgb(255, 255, 255, 0.9);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
